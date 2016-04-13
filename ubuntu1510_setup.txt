@@ -1,0 +1,178 @@
+安装vmware-tools
+
+配置python开发环境
+邢文鹏
+
+yuan设置为阿里云
+sudo apt-get install build-essential
+sudo apt-get install vim
+sudo apt-get install ctags
+sudo apt-get install cscope
+cp -r vimfiles ~/.vim
+cp -r _vimrc ~/.vimrc
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update 
+sudo apt-get install sublime-text-installer
+
+http://www.imjeff.cn/blog/62/
+package control
+
+sudo apt-get install curl
+
+pps@ubuntu:~/pps01$ curl httpbin.org/get
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.43.0"
+  }, 
+  "origin": "123.117.40.21", 
+  "url": "http://httpbin.org/get"
+}
+pps@ubuntu:~/pps01$ 
+
+sudo apt-get install python-pip python-dev build-essential 
+安装pip python-dev
+
+pip install requests
+安装requests
+
+r = requests.get('http://httpbin.org/get')
+
+print r.content
+
+在开头加上 能够解决乱码的问题
+import sys
+reload(sys)
+sys.setdefaultencoding( "utf-8" )
+
+
+
+python语法 多线程部分 先放一放 先完成功能
+先看有视频讲解的部分123
+
+学习mysql的安装和使用
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+sudo apt-get install php5-mysql
+
+sudo service mysql restart
+
+ps aux | grep mysql
+sudo netstat -tap | grep mysql
+
+mysql -u root -p 
+show databases;
+
+g++ -Wall mysql_test.cpp -o mysql_test -lmsqlclient
+/etc/init.d/mysql start
+
+
+删除mysql
+sudo apt-get autoremove --purge mysql-server-5.0
+sudo apt-get remove mysql-server
+sudo apt-get autoremove mysql-server
+sudo apt-get remove mysql-common 
+清理残留数据
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+
+sudo apt-get install libmysqlclient-dev
+
+安装PHP5
+sudo apt-get install nginx
+sudo apt-get install php5-fpm
+
+
+配置Nginx
+
+uwsgi --ini /etc/uwsgi9090.ini &/usr/local/nginx/sbin/nginx
+
+http://www.vimer.cn/2011/07/linux%E4%B8%8Bnginxpythonuwsgi%E9%83%A8%E7%BD%B2%E6%80%BB%E7%BB%93djangoweb-py.html
+
+
+sudo subl /etc/php5/fpm/php.ini
+cgi.fix_pathinfo=0
+sudo service php5-fpm restart
+
+Nginx configuration file is located at 
+/etc/nginx/nginx.conf
+
+But basically, we don't need to touch it. The configuration of nginx website is located in 
+/etc/nginx/sites-available/default file.
+
+sudo subl /etc/nginx/sites-available/default
+fastcgi_pass unix:/var/run/php5-fpm.sock;
+
+sudo service nginx restart
+sudo /etc/init.d/nginx start
+
+subl /usr/share/nginx/html/phpinfo.php
+<?phpinfo();?> 
+
+http://www.linuxdiyf.com/linux/13025.html
+
+
+
+
+配置django开发环境
+网络视频
+http://www.jianshu.com/p/e6ff4a28ab5a
+
+python  -c "from distutils.sysconfig import get_python_lib; print get_python_lib()" 
+
+
+
+
+cd /usr/local/lib/python2.7/dist-packages/
+
+自强学堂开发一个简单的django项目
+django-admin.py startproject 【project-name】
+python manage.py startapp 【app-name】
+
+python manage.py syncdb
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver 0.0.0.0:9000
+
+python manage.py flush
+清空数据库 只留下空表
+
+python manage.py createsuperuser
+创建超级管理员
+superman 123qwe
+pps 123qwe
+
+python manage.py dumpdata appname > appname.json
+python manage.py loaddata appname.json
+
+python manage.py shell
+进入ipython环境
+sudo apt-get source python-mysqldb
+sudo apt-get install libmysqlclient-dev
+subl /usr/bin/mysql_config
+sudo updatedb
+locate mysql_config
+
+sudo netstat -tap | grep 8000
+
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+
+
+安装install package包
+
+python manage.py runserver 0.0.0.0:8000
+
+配置scrapy开发环境 网络爬虫
+刘丹兵
+
+
+学习HTML语言 做一个简单的网站
+
+学习PHP
+
+sudo apt-get install libevent-dev
+sudo pip install Scrapy
+目前的版本是1.0.5
+
