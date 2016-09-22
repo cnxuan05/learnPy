@@ -2,4 +2,4 @@
 
 
 
-print '中文'
+print '中文         '
