@@ -1,5 +1,3 @@
 # coding:utf-8
 
-
-
-print '中文         '
+print u'中文'
