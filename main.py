@@ -1,3 +1,3 @@
 # coding:utf-8
 
-print u'中文'
+print u'中文123'
