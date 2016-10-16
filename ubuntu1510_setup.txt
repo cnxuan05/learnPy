@@ -1,8 +1,5 @@
 安装vmware-tools
 
-配置python开发环境
-邢文鹏
-
 yuan设置为阿里云
 sudo apt-get install build-essential
 sudo apt-get install vim
