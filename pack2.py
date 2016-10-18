@@ -4,6 +4,12 @@ def get_data(num, data):
     pass
 
 
+def get_rank(sstring, data):
+    for u in range(len(data)):
+        if data[u] == sstring:
+            return u
+
+
 def get_treat(a, b, data):
     rank_a = 100
     rank_b = -1
@@ -26,3 +32,18 @@ def get_treat(a, b, data):
         return u'印'
     elif rank_b - rank_a == 5:
         return u'比劫'
+
+
+import math
+
+
+def get_8zi(y, m, d, h):
+    a0 = ['癸', '甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬']
+    a1 = ['亥', '子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌']
+    c0 = ['', '', '', '', '', '', '', '']
+    c0[0] = a0[y % 10 - 3]
+    c0[1] = a1[(y - 3) % 12]
+    b0 = get_rank(c0[0], a0)
+    c0[2] = a0[(b0 * 2 + m) % 10 - 1]
+
+    return c0
