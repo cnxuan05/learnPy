@@ -198,23 +198,5 @@ fp.write('\n')
 fp.write('\n')
 
 
-
-
-
-
-
-fp.write(a1+'\n')
-fp.write(a2+'\n')
-fp.write(','.join(a3[::-1])+ ',' + ','+ ','.join(a4) + '\n\n')
-fp.write(a5+'\n')
-fp.write(a7+'\n')
-fp.write(a8+'\n')
-fp.write(a9+'\n')
-fp.write(aa+'\n')
-fp.write(ab+'\n')
-fp.write(ac+'\n')
-fp.write(ad+'\n')
-fp.write(ae+'\n')
-fp.write(','.join(a4[::-1]) + '\n')
 fp.close()
 print 'end'
