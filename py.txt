@@ -1,6 +1,16 @@
 练习基本操作
 
 '''
+from compiler.ast import flatten
+mob = ['a',['b','c'],'d']
+for x in flatten(mob):
+    print x
+'''
+#####
+
+
+
+'''
 # coding:utf-8
 def jd_day(year, month, day):
     # 格里历转儒略历 -4713 1 1
